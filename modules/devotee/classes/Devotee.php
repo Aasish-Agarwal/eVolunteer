@@ -643,6 +643,8 @@ class DevPMan
 			/* close statement */
 			$stmt->close();
 		}
+		
+		Devotee::enable($devId);
 		return true;
 	}
 
@@ -1251,6 +1253,22 @@ class Devotee
 		}
 	}
 
+	public static function enable($devid) {
+		self::$conn = DBConnection::getConnection();
+		#"Name","InitiatedName","Contact","AlternateContact","Mail","Address","SpouseName","Gender"
+	
+		$query  = " UPDATE  devotee ";
+		$query  .= " SET isActive=1 ";
+		$query  .= "WHERE Id = ${devid} ";
+		
+		
+		if($stmt = self::$conn->prepare($query)) {
+			$stmt->execute();
+			/* close statement */
+			$stmt->close();
+		}
+	}
+	
 	public static function getAbsenteeDev($centre_id,$prog_id,$event_date,$fldlst) {
 		self::$conn = DBConnection::getConnection();
 		#"Name","InitiatedName","Contact","AlternateContact","Mail","Address","SpouseName","Gender"
@@ -2126,6 +2144,8 @@ class Devotee
 			$stmt->close();
 		}
 
+		self::enable($devIdTarget);
+		
 		return true;
 	}
 
