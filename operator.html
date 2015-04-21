@@ -1,0 +1,138 @@
+<?php
+session_start();
+if(!defined('devman'))define('devman', true);
+?>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>ISKCON Preaching Centre - Geeta Colony</title>
+	<link rel="shortcut icon" href="/favicon.jpg" type="image/jpg">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+
+		<script type="text/javascript" src="js/jquery-min.js"></script>
+		<script type="text/javascript">jQuery.noConflict();</script>
+		<link rel="stylesheet" type="text/css" href="css/flexigrid.css" media="all" />
+		<script type="text/javascript" src="js/flexigrid.js"></script>
+</head>
+
+<body>
+
+	<div id="page-wrap">
+
+		<div id="top-bar">
+			<img src="images/iskcon-logo.png" alt="DZone" class="floatleft" />
+			<div id="right-side">
+				<img src="images/usericon.jpg" alt="user icon" />&ensp;
+				<a id=username href="#" class="authactions">User Name</a>&ensp;
+				<a id=authaction class="authactions" href="#">Logout</a> &emsp;
+				<form id="main-search">
+							<label for="search-field" id="search-field-label">Search</label>
+							<input type="text" tabindex="1" maxlength="255" id="search-field"/>
+							<input type="image" alt="Search" value="Search" src="images/search.png" id="search-button"/>
+				</form>
+				<a href='templates/Devotee Data Entry Store - 20130618.xlsm'>Devotee Upload Template</a>&ensp;
+				<a href='help/help.docx'>Help</a>&ensp;
+			</div>
+		</div>
+
+		<div id="zone-bar">
+			<ul>
+				<li>
+					<a href="#"><span>
+						Operator &nbsp;
+						<em class="opener-operator">
+							<img src="images/zonebar-downarrow.png" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul class="Operator">
+						<li id="ProgramSummary"><a href="#">Program Summary</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#"><span>
+						Admin &nbsp;
+						<em class="opener-admin">
+							<img src="images/zonebar-downarrow.png" alt="dropdown" />
+						</em>
+					</span></a>
+					<ul class="admin">
+						<li id="DevoteeUploadEXL"><a href="#">Excel Devotee Upload</a></li>
+						<li><hr></li>
+						<li id="AttendenceUploadEXL"><a href="#">Excel Attendence Upload</a></li>
+						<li><hr></li>
+						<li id="DisableDevoteeEXL"><a href="#">Excel Disable Devotees</a></li>
+					</ul>
+				</li>
+		</div>
+
+		<div id="main-content">
+			<div id="feature-content">
+
+				<div id="feature-left">
+					<h1><a href="#"></a></h1>
+					<p>
+
+					<div id="auth">
+					</div>
+					
+					
+					<div id="divDynaFrm1">
+						<div id="divDynaFrmBody1">
+						</div>
+					
+						<div id="divDynaFrmProgress1">
+							<p id="imgExcelFrm2Progress"><img src="/images/PLbzc.gif" alt="enter image description here"></p>
+						</div>
+					
+						<div id="divDynaFrmResult1" >
+						</div>
+					</div>
+					</p>
+				</div>
+
+				<div id="feature-right">
+				    <div id="chartdivAct" style="width: 100%; height: 300px;"></div>
+				    <div id="DrillDownDiv"></div>
+					<div id="feature-mini-left" class="feature-mini">
+						<h2><a href="#"></a></h2>
+						<p>
+
+
+						<div id="divFlexme1">
+						</div>
+
+						</p>
+					</div>
+					<div id="feature-mini-right" class="feature-mini">
+						<h2><a href="#"></a></h2>
+						<p>
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<div id="footer">
+			&copy;2013 <a href="http://www.krishna-seva.net/dv3/operator.html">ISKCON Preaching Centre - 12/115 Geeta Coloney - New Delhi - India</a>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="amcharts/amcharts.js"></script>
+	<script type="text/javascript" src="modules/auth/js/script.js"></script>
+	<script type="text/javascript" src="modules/admin/js/script.js"></script>
+	<script type="text/javascript" src="modules/devotee/js/script.js"></script>
+	<script type="text/javascript" src="modules/static/script.js"></script>
+</body>
+
+</html>
