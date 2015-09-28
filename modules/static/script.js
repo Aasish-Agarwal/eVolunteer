@@ -37,4 +37,6 @@ modStatic.init = function () {
 			'json');
 };
 
-
+$(document).ready(function(){
+	//modStatic.init();
+});
