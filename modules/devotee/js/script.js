@@ -1,11 +1,11 @@
 var modDevotee = {};
 
 $( document ).ajaxError(function() {
-  alert( "Triggered ajaxError handler." );
+  //alert( "Triggered ajaxError handler." );
 });
 
 function ajaxError(jqXHR, textStatus, errorThrown) {
-        alert('$.post error: ' + textStatus + ' : ' + errorThrown);
+     //   alert('$.post error: ' + textStatus + ' : ' + errorThrown);
 };
 
 

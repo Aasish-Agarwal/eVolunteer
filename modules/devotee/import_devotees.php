@@ -3,10 +3,20 @@ session_start();
 echo '<A href="../../operator.html">Back</A>';
 echo '<hr>';
 
+function isOpAllowed () {
+	$retval = 0;
+	if ( isset($_SESSION['IsAdmin']) && $_SESSION['IsAdmin'] ) {
+		$retval = 1;
+	}	
+	if ( isset($_SESSION['dentry']) && $_SESSION['dentry'] ) {
+		$retval = 1;
+	}	
+	return $retval;
+}
 
 function manageUploadedFile () {
-	if ( ! isset($_SESSION['IsAdmin'] )  || $_SESSION['IsAdmin'] != 1 ) {
-		echo "<h1><span style=\"background-color:red\">Sorry but this feature is available for admin role only</span></h1><br>";
+	if ( ! isOpAllowed() ) {
+		echo "<h1><span style=\"background-color:red\">Sorry but this feature is not available in your role</span></h1><br>";
 		exit();
 	}
 	

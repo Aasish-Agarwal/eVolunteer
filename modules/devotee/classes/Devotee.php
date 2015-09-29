@@ -1759,7 +1759,7 @@ class Devotee
 		} else {
 			$query = "select $attribute,count(distinct A.Id) from devotee A,_program_enrollment P ";
 			$query .= "where P.devotee_id= A.Id ";
-			$query .= " AND D.isActive<>0  ";
+			$query .= " AND A.isActive<>0  ";
 			$query .= "AND P.centre_id=$centre_id and P.prog_id=$prog_id ";
 			$query .= "group by A.$attribute ";
 		}

@@ -26,6 +26,7 @@ class Membership {
 			unset($_SESSION['IsRepViewer']);
 			unset($_SESSION['User']);
 			unset($_SESSION['IsVald']);
+			unset($_SESSION['dentry']);
 			echo json_encode($ret_array);
 		}
 	}
@@ -55,6 +56,11 @@ class Membership {
 				if ( $role == 'report' ) {
 					$_SESSION['IsRepViewer'] = 1;
 				}
+
+				if ( $role == 'dentry' ) {
+					$_SESSION['dentry'] = 1;
+				}
+				
 		}
 	}
 

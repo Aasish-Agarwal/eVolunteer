@@ -4,7 +4,7 @@ session_start();
 
 function showDevoteeDetailsForm () {
 	if ( ! isset($_SESSION['IsVald'])  || $_SESSION['IsVald'] != 1 ) {
-		echo "<h1><span style=\"background-color:red\">This operation requires lon in to the system</span></h1><br>";
+		echo "<h1><span style=\"background-color:red\">This operation requires log in to the system</span></h1><br>";
 		return;
 	}
 

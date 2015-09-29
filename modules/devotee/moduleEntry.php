@@ -42,30 +42,6 @@ function getCentreProgramMeta () {
 	$data['centres'] = array ();
 	$data['centre_programs'] = array ();
 	
-#	$data['centres']["C1"] = 101;
-#	$data['centres']["C2"] = 102;
-#	$data['centres']["C3"] = 103;
-	
-#	$prog_c1 = array();
-#	$prog_c2 = array();
-#	$prog_c3 = array();
-	
-#	$prog_c1["P1 C1"] = 1;
-#	$prog_c1["P2 C1"] = 2;
-#	$prog_c1["P3 C1"] = 3;
-	
-#	$prog_c2["P1 C2"] = 4;
-#	$prog_c2["P2 C2"] = 5;
-#	$prog_c2["P3 C2"] = 6;
-
-#	$prog_c3["P1 C3"] = 7;
-#	$prog_c3["P2 C3"] = 8;
-#	$prog_c3["P3 C3"] = 9;
-	
-#	$data['centre_programs'][101] = $prog_c1;
-#	$data['centre_programs'][102] = $prog_c2;
-#	$data['centre_programs'][103] = $prog_c3;
-
 	$clist = Centres::getList();
 	foreach( array_keys($clist) as $cname){
 		$cid = $clist[$cname];
@@ -412,37 +388,42 @@ function actionProcessor () {
 		getAllPrograms();
 	}
 	
-	if ( $action == "getAttendence" ) {
-		getAttendence();
-	}
-	
-	if ( $action == "getDistribution" ) {
-		getDistribution();
-	}
-	
 	if ( $action == "getLstTypeDevAttrib" ) {
 		getLstTypeDevAttrib();
 	}
 	
-	if ( $action == "getRegDevCntreProgAttrib" ) {
-		getRegDevCntreProgAttrib();
+	
+	if ( $_SESSION['IsAdmin'] ||  $_SESSION['siteadmin'] || $_SESSION['IsRepViewer'] ) {
+		if ( $action == "getAttendence" ) {
+			getAttendence();
+		}
+		
+		if ( $action == "getDistribution" ) {
+			getDistribution();
+		}
+		
+		
+		if ( $action == "getRegDevCntreProgAttrib" ) {
+			getRegDevCntreProgAttrib();
+		}
+		
+		if ( $action == "getEventDev" ) {
+			getEventDev();
+		}
+	
+		if ( $action == "getAttendenceTrends" ) {
+			getAttendenceTrends();
+		}
+		
+		if ( $action == "getAbsenteeDev" ) {
+			getAbsenteeDev();
+		}
+	
+		if ( $action == "getDevExport" ) {
+			getDevExport();
+		}
 	}
 	
-	if ( $action == "getEventDev" ) {
-		getEventDev();
-	}
-
-	if ( $action == "getAttendenceTrends" ) {
-		getAttendenceTrends();
-	}
-	
-	if ( $action == "getAbsenteeDev" ) {
-		getAbsenteeDev();
-	}
-
-	if ( $action == "getDevExport" ) {
-		getDevExport();
-	}
 	
 }
 
