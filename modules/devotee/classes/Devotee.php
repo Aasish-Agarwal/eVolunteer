@@ -1757,11 +1757,11 @@ class Devotee
 			$query .= " event_date >= $event_date) ";
 			$query .= " group by D.$attribute ";
 		} else {
-			$query = "select $attribute,count(distinct A.Id) from devotee A,_program_enrollment P ";
-			$query .= "where P.devotee_id= A.Id ";
+			$query = "select $attribute,count(distinct D.Id) from devotee D,_program_enrollment P ";
+			$query .= "where P.devotee_id= D.Id ";
 			$query .= " AND D.isActive<>0  ";
 			$query .= "AND P.centre_id=$centre_id and P.prog_id=$prog_id ";
-			$query .= "group by A.$attribute ";
+			$query .= "group by D.$attribute ";
 		}
 
 
